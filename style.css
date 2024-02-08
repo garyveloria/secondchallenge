@@ -11,16 +11,17 @@ body {
   
   .container {
     display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
   }
   
   .item {
+    width: 350px;
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 20px;
     overflow: hidden;
-    flex: 1;
     display: flex;
-    flex-direction: column;
   }
   
   .item--link {
@@ -41,7 +42,7 @@ body {
   }
   
   .item:hover .item--img {
-    transform: scale(1.1);
+    transform: scaleX(1.1);
   }
   
   .item--content {
@@ -51,6 +52,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: start;
+    height: 270px;
   }
   
   .item--title h2 {
@@ -59,6 +61,9 @@ body {
   
   .item--desc {
     flex: 1;
+    max-height: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .item--button {
@@ -80,5 +85,11 @@ body {
   .item:hover .item--button button {
     background-color: #000;
     color: #fff;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .item {
+      width: 320px;
+    }
   }
   
